@@ -22,7 +22,7 @@ def main(argv=None):
     # load  the data
     dataX, dataY, m, num_atrib = load_data(file_name)
 
-    #Save a copy of the unscaled features
+    #Save a copy of the unscaled features for normal equation
     data_unscaled = dataX
     data_unscaled = [[1.0] + elem for elem in dataX]
 
@@ -35,11 +35,12 @@ def main(argv=None):
     #inicialize theta
     theta = [0] * num_atrib
 
-    # Batch Gradient Descend
-    part_one(dataX,dataY,theta,m,num_atrib,alpha,num_iterations,mu,sigma)
-    #batch_gradient_descend(dataX, dataY, theta, m, num_atrib, alpha)
-    #selected_learning_rate(dataX,dataY,theta,m,num_atrib,alpha,num_iterations)
-    part_two(data_unscaled,dataY,num_atrib)
+    # Gradient Descend
+    # selected_learning_rate(dataX,dataY,theta,m,num_atrib,alpha,num_iterations)
+    #part_one(dataX,dataY,theta,m,num_atrib,alpha,num_iterations,mu,sigma)
+    #part_two(data_unscaled,dataY,num_atrib)
+    #stochastic_gradient_descent(dataX, dataY, theta, m, num_atrib, alpha, num_iterations, mu, sigma)
+
 
 
 if __name__ == "__main__":
